@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "anaf.api.base.url",
+    "type": "java.lang.String",
+    "description": "The base url for the Anaf api. Used for rest requests with an OAuth2 access token as authentication."
+  },
+  {
+    "name": "cron.reported-invoice.check-state",
+    "type": "java.lang.String",
+    "description": "A cron expression specifying how often you want to check the ANAF server for the status of reported Invoices"
+  },
+  {
+    "name": "anaf.request.sleep-delay.seconds",
+    "type": "java.lang.Integer",
+    "description": "Value in seconds to sleep between consecutive ANAF requests"
+  },
+  {
+    "name": "cron.received-message.find-new",
+    "type": "java.lang.String",
+    "description": "A cron expression specifying how often you want to check the ANAF server for new received messages (second, minute, hour, day of month, month, day(s) of week)"
+  }
+]}
