@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.oauth2.client.AuthorizedClientServiceOAuth2AuthorizedClientManager;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientManager;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClientProvider;
+import org.springframework.security.oauth2.client.OAuth2AuthorizedClientProviderBuilder;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
 import org.springframework.web.client.RestTemplate;
@@ -34,9 +36,17 @@ public class BeanConfig {
 	        final ClientRegistrationRepository clientRegistrationRepository,
 	        final OAuth2AuthorizedClientService authorizedClientService) {
 
-	    final OAuth2AuthorizedClientManager authorizedClientManager =
+		final OAuth2AuthorizedClientProvider authorizedClientProvider =
+				OAuth2AuthorizedClientProviderBuilder.builder()
+				.clientCredentials()
+				.authorizationCode()
+				.refreshToken()
+				.build();
+		
+	    final AuthorizedClientServiceOAuth2AuthorizedClientManager authorizedClientManager =
 	            new AuthorizedClientServiceOAuth2AuthorizedClientManager(
 	                    clientRegistrationRepository, authorizedClientService);
+	    authorizedClientManager.setAuthorizedClientProvider(authorizedClientProvider);
 
 	    return authorizedClientManager;
 	}
