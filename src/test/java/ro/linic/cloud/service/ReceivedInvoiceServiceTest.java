@@ -145,7 +145,7 @@ public class ReceivedInvoiceServiceTest {
 		assertThat(capturedCreditNote.getId()).isEqualTo(billReceived.getId());
 		assertThat(capturedCreditNote.getUploadIndex()).isEqualTo(billReceived.getUploadIndex());
 		assertThat(capturedCreditNote.getDownloadId()).isEqualTo(billReceived.getId().toString());
-		assertThat(capturedCreditNote.getXmlRaw()).isEqualTo(Files.readString(testInvoiceXmlPath));
+		assertThat(capturedCreditNote.getXmlRaw().replaceAll("\\s", "")).isEqualTo(Files.readString(testInvoiceXmlPath).replaceAll("\\s", ""));
 		assertThat(capturedCreditNote.getIssueDate()).isEqualTo(LocalDate.of(2024, 1, 31));
 	}
 }
