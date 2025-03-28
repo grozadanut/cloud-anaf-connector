@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>ro.linic.cloud</groupId>
 	<artifactId>cloud-anaf-connector</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>cloud-anaf-connector</name>
 	<description>Connects Linic billing with ANAF eFactura billing</description>
 	<properties>
@@ -78,6 +78,16 @@
 		<dependency>
 		    <groupId>org.apache.camel.springboot</groupId>
 		    <artifactId>camel-mapstruct-starter</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>io.sentry</groupId>
+		    <artifactId>sentry-spring-boot-starter-jakarta</artifactId>
+		    <version>8.5.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>io.sentry</groupId>
+		    <artifactId>sentry-logback</artifactId>
+		    <version>8.5.0</version>
 		</dependency>
 
 		<dependency>
