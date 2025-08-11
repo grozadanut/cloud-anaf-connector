@@ -77,6 +77,7 @@ public class ReceivedInvoiceServiceImpl implements ReceivedInvoiceService {
 			
 		} catch (final ParserConfigurationException | SAXException | IOException e) {
 			log.log(Level.SEVERE, "Error parsing XML", e);
+			log.log(Level.SEVERE, rawXml);
 		}
 	}
 	
