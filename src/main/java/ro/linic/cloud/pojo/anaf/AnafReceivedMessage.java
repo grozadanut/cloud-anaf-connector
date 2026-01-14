@@ -30,6 +30,8 @@ public class AnafReceivedMessage {
 		@JsonProperty("FACTURA TRIMISA")
 		BILL_SENT,
 		@JsonProperty("ERORI FACTURA")
-		BILL_ERRORS;
+		BILL_ERRORS,
+		@JsonProperty("MESAJ CUMPARATOR TRANSMIS")
+		BUYER_MESSAGE;
 	}
 }
